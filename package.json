@@ -1,0 +1,20 @@
+{
+  "name": "nodebook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HUTOM-junty6735/nodeBook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HUTOM-junty6735/nodeBook/issues"
+  },
+  "homepage": "https://github.com/HUTOM-junty6735/nodeBook#readme"
+}
