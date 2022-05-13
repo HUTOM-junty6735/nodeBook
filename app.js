@@ -57,35 +57,35 @@
 //   }  
 //#endregion
 
-//#region worker_therad2
-const {Worker, isMainThread, parentPort, workerData} = require('worker_threads');
-if(isMainThread)
-{
-    const threads = new Set();
-    // 일단 new Worker로 생성되면서 바로 실행된다.
-    threads.add(new Worker(__filename, {
-        workerData : {start : 1}
-    }));
-    threads.add(new Worker(__filename, {
-        workerData : {start : 2}
-    }));
+// //#region worker_therad2
+// const {Worker, isMainThread, parentPort, workerData} = require('worker_threads');
+// if(isMainThread)
+// {
+//     const threads = new Set();
+//     // 일단 new Worker로 생성되면서 바로 실행된다.
+//     threads.add(new Worker(__filename, {
+//         workerData : {start : 1}
+//     }));
+//     threads.add(new Worker(__filename, {
+//         workerData : {start : 2}
+//     }));
 
-    for (let worker of threads)
-    {
-        worker.on('message', message=>console.log('from workder : ', message));
-        worker.on('exit', ()=>{
-            threads.delete(worker);
-            if(threads.size == 0 )
-            {
-                console.log('job done');
-            }
-        });
-    }
-}
-else
-{
-    console.log('start worker');    
-    const data = workerData;
-    parentPort.postMessage(data.start + 100);
-}
-//#endregion
+//     for (let worker of threads)
+//     {
+//         worker.on('message', message=>console.log('from workder : ', message));
+//         worker.on('exit', ()=>{
+//             threads.delete(worker);
+//             if(threads.size == 0 )
+//             {
+//                 console.log('job done');
+//             }
+//         });
+//     }
+// }
+// else
+// {
+//     console.log('start worker');    
+//     const data = workerData;
+//     parentPort.postMessage(data.start + 100);
+// }
+// //#endregion
